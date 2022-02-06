@@ -1,0 +1,42 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <!-- <div class = "togglebox"> -->
+    <!-- <ion-toggle ion-toggle-text ng-model="simple" color=purple id="now-or-later"> -->
+      <!-- Simple Example: <b>{{ simple || false }}</b> -->
+    <!-- </ion-toggle> -->
+  <!-- <ion-toggle [(ngModel)]="future_values" color="purple"></ion-toggle> -->
+<!-- </div> -->
+<ion-button *ngFor="let nowOrLater of this.comValService.ownedAndWantedvalues | keyvalue" expand=block  fill="outline" disabled={{nowOrLater.value.disabled}} class="now-or-later {{nowOrLater.value.class}}" 
+(click) ="this.comValService.nowToFuture(nowOrLater.value.friendly_name, nowOrLater.key, nowOrLater.value.opposite_val)">{{nowOrLater.value.friendly_name}}</ion-button>
+
+<!-- <tr *ngFor="let item of this.comValService.ownedAndWantedvalues | keyvalue"></tr> -->
+<!-- <ion-button expand=block fill=outline class="now-or-later">Future values</ion-button> -->
+  <div id=background>
+<div class=slider-div>
+<app-vertical-sliders></app-vertical-sliders>
+</div>
+
+<!-- <ngx-slider [(value)]="value" [options]="options"></ngx-slider> -->
+
+
+
+  <!-- <ion-range min="2" max="40" color="purple" class="custom-ion-range-slider" (ionChange)="onChange($event)">
+    
+  </ion-range>
+  <ion-range min="2" max="40" color="red" class="custom-ion-range-slider">
+    
+  </ion-range>
+  <ion-range min="2" max="40" color="green" class="custom-ion-range-slider">
+    
+  </ion-range>
+  <ion-range min="2" max="40" color="blue" class="custom-ion-range-slider">
+    
+  </ion-range> -->
+
+  
+</div>
+
+
+</ion-content>

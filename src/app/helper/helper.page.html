@@ -1,0 +1,23 @@
+<div *ngIf="isSplashPage(router.url)" class="logo-splash rain front-row">  
+  <div  *ngFor="let raindrop of this.rainDrops" class="drop" style="animation-delay: {{raindrop.delay}}; left: {{raindrop.left}}; bottom: {{raindrop.bottom}}; animation-duration: {{raindrop.duration}};"><div class="stem {{raindrop.class}}" style="animation-delay: {{raindrop.delay}}; animation-duration: {{raindrop.duration}};"></div></div>
+</div>
+
+<div *ngIf="router.url === '/helper'" class="rain back-row">  
+  <div  *ngFor="let raindrop of this.backgroundRainDrops" class="drop" style="animation-delay: {{raindrop.delay}}; left: {{raindrop.left}}; bottom: {{raindrop.bottom}}; animation-duration: {{raindrop.duration}};"><div class="stem" style="animation-delay: {{raindrop.delay}}; animation-duration: {{raindrop.duration}};"></div></div>
+  </div>
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom" style="margin-top: 5px;">
+    <ion-tab-button tab="values">
+      <ion-icon name="pulse"></ion-icon>
+      <ion-label >Set values</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="trades">
+      <ion-icon name="repeat" ></ion-icon>
+      <ion-label >Calculate trades</ion-label>
+    </ion-tab-button>
+    
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,0 +1,98 @@
+<ion-header>
+  <p>You are offering
+    <span *ngIf=" this.comValService.ownedAndWantedvalues.current_val.own > this.comValService.ownedAndWantedvalues.current_val.want">{{this.comValService.ownedAndWantedvalues.current_val["own"]-this.comValService.ownedAndWantedvalues.current_val["want"]}}K MORE <br></span>
+    <span *ngIf=" this.comValService.ownedAndWantedvalues.current_val.own < this.comValService.ownedAndWantedvalues.current_val.want">{{this.comValService.ownedAndWantedvalues.current_val["want"]-this.comValService.ownedAndWantedvalues.current_val["own"]}}K LESS <br></span>
+    <span *ngIf=" this.comValService.ownedAndWantedvalues.current_val.own == this.comValService.ownedAndWantedvalues.current_val.want">no more and no less <br></span>
+    than you are asking for.</p>
+    <table class="amounts_adjust">
+      <tr>
+        <td class = "name_cell">
+
+        </td>
+        <td class = "adjuster_cell">
+          You offer
+        </td>
+        <td class = "adjuster_cell">
+          You want
+        </td>
+        <td class="padded_cell"></td>
+      </tr>
+      <tr *ngFor="let item of this.comValService.ownedAndWantedvalues | keyvalue">
+        <td>
+          {{item.value.friendly_name}} total
+        </td>
+        <td *ngFor="let getGive of ['own','want']">
+          {{item.value[getGive]}}
+          <!-- {{this.comValService.ownedAndWantedvalues.current_val[getGive]}} -->
+        </td>
+      </tr>
+    </table>
+</ion-header>
+
+<ion-content class="trades-content" justify-content-center align-items-center>
+  <ion-grid style="height:100vh">
+    
+    <ion-row style="display: flex; align-items: center; justify-content: center;">
+       
+      <ion-col>
+        
+      </ion-col>
+      <ion-col size=8>
+        <table class="trade_blocks">
+          <tr>
+            <td *ngFor="let getGive of ['own','want']" class={{getGive}}>
+              <div *ngFor="let item of this.comValService.allCommodities | keyvalue" style="display: block;">
+                <img class="commodity_block" *ngFor="let itI of item.value[getGive]" src="../assets/{{item.key}}-cube.png" style="transform: translate({{itI.x}}, {{itI.y}}) rotate({{itI.rot}}); position:absolute;">
+              </div>
+              </td>
+          </tr>
+        </table>
+        <!-- <img src="../assets/trades-symbol.png" width="100%"> -->
+      </ion-col></ion-row>
+
+    <ion-row style="display: flex; align-items: right; justify-content: center;">
+    <table class="amounts_adjust">
+      <!-- <tr>
+        <td>
+
+        </td>
+        <td>
+          You offer
+        </td>
+        <td>
+          You want
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Total value
+        </td>
+        <td *ngFor="let getGive of ['own','want']">
+          {{this.comValService.ownedAndWantedvalues[getGive]}}
+        </td>
+      </tr> -->
+      <tr *ngFor="let item of this.comValService.allCommodities | keyvalue" class="{{item.key}}_row">
+        <td class="name_cell">
+        <p>{{item.value.shortened}} <br>
+        <span class="value-text">Value: {{item.value.current_val}}K</span></p>
+      </td>
+      <td *ngFor="let getGive of ['own','want']" class = "adjuster_cell">
+        <p>
+        
+        {{item.value[getGive]?.length}}
+        <!-- <ion-icon size="medium"  name="remove-circle" (click)="this.comValService.removeItem(item.key, getGive)"  color={{item.key}}></ion-icon><ion-icon size="medium" name="add-circle" (click)="this.comValService.addItem(item.key, getGive)" color={{item.key}}></ion-icon> -->
+        <br><ion-button (click)="this.comValService.removeItem(item.key, getGive)" color={{item.key}} size="small">
+          -</ion-button>
+        <ion-button (click)="this.comValService.addItem(item.key, getGive)" color={{item.key}} size="small">
+          +</ion-button>
+      </p>
+      </td>
+      <td class="padded_cell">
+      </td>
+      </tr>
+      
+    </table>
+    </ion-row>
+    
+
+    <ion-button class="reset_button" (click)="this.comValService.resetAll()" color="medium" size="small" expand="block" fill="outline">Reset</ion-button>

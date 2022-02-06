@@ -1,0 +1,335 @@
+// #background {
+//     background: url('../../assets/background-gradient-small.png') no-repeat center center fixed;
+//     -webkit-background-size: cover;
+//     -moz-background-size: cover;
+//     background-size: cover;
+//   }
+
+
+// Code to style toggle so that text is inside it
+// Thanks to Ishita Ray
+// https://stackoverflow.com/questions/29280945/how-can-i-place-text-inside-an-ion-toggle
+ion-button.now-or-later{
+  width:45%;
+  display: inline-block;
+  margin: 2.5%
+}
+
+ion-button.now-or-later.isactive{
+  color: gold;
+  --border-color: gold;
+}
+
+ion-button.now-or-later.notactive{
+  color: grey;
+  --border-color: grey;
+}
+
+
+ion-toggle#now-or-later{
+  padding: 50px;
+}
+
+ion-toggle#now-or-later[aria-checked="false"]{
+  position: relative;
+  width: 150px;
+  height: 20px;
+  --background:gold;
+ &::before {
+   position: absolute;
+   content: "Current values";
+   font-size: 10px;
+   left: 50px;
+   line-height: 20px;
+   color: black;
+   z-index: 100;
+ }
+ &::after {
+   position: absolute;
+   content: "";
+ }
+}
+ion-toggle#now-or-later[aria-checked="true"]{
+ position: relative;
+ width: 150px;
+ height: 20px;
+ &::before {
+   position: absolute;
+   content: "";
+ }
+&::after {
+  position: absolute;
+  content: "Future values";
+  font-size: 10px;
+  line-height: 45px;
+  top: 0;
+  left: 50px;
+  color: #fff;
+}
+}
+  .slider-div{
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+::ng-deep {
+
+  .logo-splash{
+    display: none;
+  }
+
+  .ngx-slider .ngx-slider-selection {
+      visibility: visible;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-bar {
+      background: #ffffff00;
+      height: 2px;
+    }
+    .custom-slider-blue.ngx-slider .ngx-slider-selection {
+      background: rgb(255, 255, 255);
+      box-shadow:
+      0 0 10px 4px rgb(00, 180, 255), 
+    }
+
+    .custom-slider-red.ngx-slider .ngx-slider-selection {
+        background: rgb(255, 255, 255);
+        box-shadow:
+        0 0 10px 4px rgb(255, 81, 73), 
+      }
+
+      .custom-slider-green.ngx-slider .ngx-slider-selection {
+        background: rgb(255, 255, 255);
+        box-shadow:
+        0 0 10px 4px rgb(61, 254, 61), 
+      }
+
+      .custom-slider-white.ngx-slider .ngx-slider-selection {
+        background: rgb(255, 255, 255);
+        box-shadow:
+        0 0 10px 4px rgb(255, 255, 255),
+      }
+
+
+      
+  
+  
+
+    // .ngx-slider .ngx-slider-span.ngx-slider-pointer {
+    //   width: 25px;
+    //   height: 25px;
+    //   top: auto; /* to remove the default positioning */
+    //   transform: translate(5px,-8px);
+    //   bottom: 0;
+    //   // background-color: #333;
+    //   border-top-left-radius: 50px;
+    //   border-top-right-radius: 50px;
+    //   background: url('../../assets/blue-cube.png');
+    //   background-repeat: no-repeat;
+    //   background-size: 25px 25px;
+    // }
+
+
+    .custom-slider-blue.ngx-slider .ngx-slider-span.ngx-slider-pointer {
+        width: 35px;
+      height: 58px;
+      top: auto; /* to remove the default positioning */
+      transform: translate(5px,5px);
+      bottom: 0;
+      // background-color: #333;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      background: url('../../assets/gifs/blue-with-trail/frame1.png');
+      background-repeat: no-repeat;
+      background-size: 35px 58px;
+      animation: blueGif 0.7s infinite;
+      animation-delay: 105ms;
+    }
+
+
+    .custom-slider-red.ngx-slider .ngx-slider-span.ngx-slider-pointer {
+        width: 35px;
+      height: 58px;
+      top: auto; /* to remove the default positioning */
+      transform: translate(5px,5px);
+      bottom: 0;
+      // background-color: #333;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      background: url('../../assets/gifs/red-with-trail/frame1.png');
+      background-repeat: no-repeat;
+      background-size: 35px 58px;
+      animation: redGif 0.4s infinite;
+    }
+
+    .custom-slider-green.ngx-slider .ngx-slider-span.ngx-slider-pointer {
+      width: 35px;
+    height: 58px;
+    top: auto; /* to remove the default positioning */
+    transform: translate(5px,5px);
+    bottom: 0;
+    // background-color: #333;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background: url('../../assets/gifs/green-with-trail/frame1.png');
+    background-repeat: no-repeat;
+    background-size: 35px 58px;
+    animation: greenGif 1s infinite;
+  }
+
+  .custom-slider-white.ngx-slider .ngx-slider-span.ngx-slider-pointer {
+      width: 35px;
+    height: 58px;
+    top: auto; /* to remove the default positioning */
+    transform: translate(5px,5px);
+    bottom: 0;
+    // background-color: #333;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background: url('../../assets/gifs/white-with-trail/frame1.png');
+    background-repeat: no-repeat;
+    background-size: 35px 58px;
+    animation: whiteGif 1s infinite;
+    animation-delay: 225ms;
+  }
+
+
+
+    @keyframes redGif{
+      0%,100%  {background-image: url('../../assets/gifs/red-with-trail/frame1.png');}
+      15% {background-image: url('../../assets/gifs/red-with-trail/frame1p5.png');}
+      30% {background-image: url('../../assets/gifs/red-with-trail/frame2.png');}
+      45% {background-image: url('../../assets/gifs/red-with-trail/frame2p5.png');}
+      60% {background-image: url('../../assets/gifs/red-with-trail/frame3.png');}
+      75% {background-image: url('../../assets/gifs/red-with-trail/frame3p5.png');}
+      85% {background-image: url('../../assets/gifs/red-with-trail/frame4.png');}
+      95% {background-image: url('../../assets/gifs/red-with-trail/frame4p5.png');}
+   }
+
+   @keyframes blueGif{
+    0%,100%  {background-image: url('../../assets/gifs/blue-with-trail/frame1.png');}
+    15% {background-image: url('../../assets/gifs/blue-with-trail/frame1p5.png');}
+    30% {background-image: url('../../assets/gifs/blue-with-trail/frame2.png');}
+    45% {background-image: url('../../assets/gifs/blue-with-trail/frame2p5.png');}
+    60% {background-image: url('../../assets/gifs/blue-with-trail/frame3.png');}
+    75% {background-image: url('../../assets/gifs/blue-with-trail/frame3p5.png');}
+    85% {background-image: url('../../assets/gifs/blue-with-trail/frame4.png');}
+    95% {background-image: url('../../assets/gifs/blue-with-trail/frame4p5.png');}
+ }
+
+
+ @keyframes whiteGif{
+  0%,100%  {background-image: url('../../assets/gifs/white-with-trail/frame1.png');}
+  15% {background-image: url('../../assets/gifs/white-with-trail/frame1p5.png');}
+  30% {background-image: url('../../assets/gifs/white-with-trail/frame2.png');}
+  45% {background-image: url('../../assets/gifs/white-with-trail/frame2p5.png');}
+  60% {background-image: url('../../assets/gifs/white-with-trail/frame3.png');}
+  75% {background-image: url('../../assets/gifs/white-with-trail/frame3p5.png');}
+  85% {background-image: url('../../assets/gifs/white-with-trail/frame4.png');}
+  95% {background-image: url('../../assets/gifs/white-with-trail/frame4p5.png');}
+}
+
+@keyframes greenGif{
+  0%,100%  {background-image: url('../../assets/gifs/green-with-trail/frame1.png');}
+  15% {background-image: url('../../assets/gifs/green-with-trail/frame1p5.png');}
+  30% {background-image: url('../../assets/gifs/green-with-trail/frame2.png');}
+  45% {background-image: url('../../assets/gifs/green-with-trail/frame2p5.png');}
+  60% {background-image: url('../../assets/gifs/green-with-trail/frame3.png');}
+  75% {background-image: url('../../assets/gifs/green-with-trail/frame3p5.png');}
+  85% {background-image: url('../../assets/gifs/green-with-trail/frame4.png');}
+  95% {background-image: url('../../assets/gifs/green-with-trail/frame4p5.png');}
+}
+
+
+
+    textarea:focus,
+    input:focus {
+      outline: none;
+    }
+  
+    *:focus {
+      outline: none;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-pointer:after {
+      display: none;
+    }
+  
+    .custom-slider-blue.ngx-slider .ngx-slider-bubble {
+      bottom: 14px;
+      color: rgb(243, 243, 243);
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00B4FF, 0 0 40px #00B4FF, 0 0 50px #00B4FF, 0 0 60px #00B4FF, 0 0 70px #00B4FF;
+    }
+
+    .custom-slider-red.ngx-slider .ngx-slider-bubble {
+        bottom: 14px;
+        color: rgb(243, 243, 243);
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FF5149, 0 0 40px #FF5149, 0 0 50px #FF5149, 0 0 60px #FF5149, 0 0 70px #FF5149;
+      }
+
+      .custom-slider-green.ngx-slider .ngx-slider-bubble {
+        bottom: 14px;
+        color: rgb(243, 243, 243);
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #3DF53D, 0 0 40px #3DF53D, 0 0 50px #3DF53D, 0 0 60px #3DF53D, 0 0 70px #3DF53D;
+      }
+
+      .custom-slider-white.ngx-slider .ngx-slider-bubble {
+        bottom: 14px;
+        color: rgb(243, 243, 243);
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff;
+      }
+  
+    .custom-slider-blue.ngx-slider .ngx-slider-limit {
+      font-weight: bold;
+      color: rgb(243, 243, 243);
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00B4FF, 0 0 40px #00B4FF, 0 0 50px #00B4FF, 0 0 60px #00B4FF, 0 0 70px #00B4FF;
+    }
+
+    .custom-slider-red.ngx-slider .ngx-slider-limit {
+        font-weight: bold;
+        color: rgb(243, 243, 243);
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FF5149, 0 0 40px #FF5149, 0 0 50px #FF5149, 0 0 60px #FF5149, 0 0 70px #FF5149;
+      }
+ 
+      .custom-slider-green.ngx-slider .ngx-slider-limit {
+        font-weight: bold;
+        color: rgb(243, 243, 243);
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #3DF53D, 0 0 40px #3DF53D, 0 0 50px #3DF53D, 0 0 60px #3DF53D, 0 0 70px #3DF53D;
+      }
+
+      .custom-slider-white.ngx-slider .ngx-slider-limit {
+        font-weight: bold;
+        color: rgb(243, 243, 243);
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff;
+      }
+      
+
+    .custom-slider .ngx-slider .ngx-slider-tick.ngx-slider-selected {
+      background: orange;
+    }
+  
+    .custom-slider-blue.ngx-slider .ngx-slider-bubble.ngx-slider-limit {
+        display: none;
+      color: #ffffff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00B4FF, 0 0 40px #00B4FF, 0 0 50px #00B4FF, 0 0 60px #1700e6, 0 0 70px #00B4FF;
+    }
+
+    .custom-slider-red.ngx-slider .ngx-slider-bubble.ngx-slider-limit {
+        display: none;
+        color: #ffffff;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FF5149, 0 0 40px #FF5149, 0 0 50px #FF5149, 0 0 60px #FF5149, 0 0 70px #FF5149;
+      }
+
+      .custom-slider-green.ngx-slider .ngx-slider-bubble.ngx-slider-limit {
+        display: none;
+        color: #ffffff;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #3DF53D, 0 0 40px #3DF53D, 0 0 50px #3DF53D, 0 0 60px #3DF53D, 0 0 70px #3DF53D;
+      }
+
+      .custom-slider-white.ngx-slider .ngx-slider-bubble.ngx-slider-limit {
+        display: none;
+        color: #ffffff;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff;
+      }
+  }

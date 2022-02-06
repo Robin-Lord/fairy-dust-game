@@ -1,0 +1,143 @@
+ion-header{
+    padding: 10px;
+    text-align: center;
+}
+
+ion-content.trades-content{
+    --ion-background-color:black;}
+
+table.trade_blocks { 
+    width:60vw;
+    height:60vw;
+    max-width: 400px;
+    max-height: 400px;
+    padding-bottom: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    background-image: url("../../assets/trades-symbol-2.png");
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    color: white;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+table.trade_blocks td {
+    padding: 15% !important;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    margin-right: 100px;
+    color: white;
+}
+
+table.trade_blocks td.own {
+    padding-left: 25% !important;
+    padding-right: 20% !important;
+    padding-bottom: 40% !important;
+}
+
+table.trade_blocks td.want {
+    padding-right: 25% !important;
+    padding-left: 20% !important;
+    padding-top: 60% !important;
+}
+
+table.trade_blocks td div {
+    display: inline-block !important;
+    width: 40%;
+    height: 50%;
+    // text-align: right;
+    align-items: right;
+}
+
+table.amounts_adjust {
+    // margin-right: 10%;
+    margin-left: auto;
+    color: white;
+}
+
+table.amounts_adjust td {
+    font-size:calc(12px + 1.5vw);
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    vertical-align: top;
+}
+
+td.adjuster_cell{
+    width: 25vw;
+}
+
+td.padded_cell{
+    width: 10vw;
+}
+
+td.name_cell{
+    width: 40vw;
+}
+
+img.commodity_block{
+    min-width: 5px;
+    width: 2vw;
+
+}
+
+tr.blue_row td{
+    -moz-box-shadow: inset 0 -40px 40px -40px #4458ee;
+    -webkit-box-shadow: inset 0 -40px 40px -40px #4458ee;
+    box-shadow: inset 0 -40px 40px -40px #4458ee;
+    // text-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue, 0 0 60px blue, 0 0 70px blue;
+}
+
+tr.red_row td{
+    -moz-box-shadow: inset 0 -40px 40px -40px #b71a32;
+    -webkit-box-shadow: inset 0 -40px 40px -40px #b71a32;
+    box-shadow: inset 0 -40px 40px -40px #b71a32;
+    // text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red;
+}
+
+tr.green_row td{
+    -moz-box-shadow: inset 0 -40px 40px -40px #68bb78;
+    -webkit-box-shadow: inset 0 -40px 40px -40px #68bb78;
+    box-shadow: inset 0 -40px 40px -40px #68bb78;
+    // text-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green, 0 0 40px green, 0 0 50px green, 0 0 60px green, 0 0 70px green;
+}
+
+tr.white_row td{
+    -moz-box-shadow: inset 0 -40px 40px -40px white;
+    -webkit-box-shadow: inset 0 -40px 40px -40px white;
+    box-shadow: inset 0 -40px 40px -40px white;
+    // text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
+}
+
+ionic-icon {
+    color: white;
+}
+
+.value-text{
+    font-size:calc(6px + 1.5vw);
+}
+
+.reset_button{
+    margin: 30px;
+
+}
+
+::ng-deep {
+.logo-splash{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    background: None !important;
+    z-index: 5;
+    // // background-size: 35px 58px;
+    // animation: rainyGif 0.2s infinite;
+    // animation-delay: 225ms;
+  
+  }
+}
